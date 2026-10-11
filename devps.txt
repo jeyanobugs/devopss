@@ -1,0 +1,98 @@
+Git Commands
+
+mkdir Githublab	
+cd ~/Downloads/Githublab	
+touch samples.py	
+git init	
+git config --global user.name "jeyanobugs"	
+git config --global user.email "24243035@nec.edu.in"	
+git add samples.py	
+git commit -m "Add samples.py"	 
+git remote add origin https://github.com/jeyanobugs/Githublab.git	
+1git branch -M main	
+git push -u origin main	
+
+Managing and Operating Docker Containers: Start, Tag, Rename and File Transfers (With Docker)
+Ensure container exists first (Port 8086 link panni container start panrom)
+->docker run -d -p 8086:80 --name fine-app nginx:alpine
+Create local HTML file
+->echo <h1>Hello I am updated fine-app!</h1> > fine.html
+Copy file to container
+->docker cp fine.html fine-app:/usr/share/nginx/html/index.html
+(Web Check: http://localhost:8086 -> Hello I am updated fine-app!)
+Rename container
+docker rename fine-app my-web-app
+->docker ps
+Tag Image
+->docker tag nginx:alpine my-nginx:v1.0
+->docker images
+Step 5: Stop Container
+->docker stop my-web-app
+(Web Check: Site can't be reached)
+Start Container
+->docker start my-web-app
+(Web Check: Site is BACK ON)
+ Download File from Container
+->docker cp my-web-app:/usr/share/nginx/html/index.html ./downloaded_index.html
+
+Commands 
+docker run -d -p 8086:80 --name fine-app nginx:alpine
+echo <h1>Hello I am updated fine-app!</h1> > fine.html
+docker cp fine.html fine-app:/usr/share/nginx/html/index.html
+docker rename fine-app my-web-app
+docker ps
+docker tag nginx:alpine my-nginx:v1.0
+docker images
+docker stop my-web-app
+docker start my-web-app
+docker cp my-web-app:/usr/share/nginx/html/index.html ./downloaded_index.html
+
+Managing and Operating Docker Containers: Start, Tag, Rename and File Transfers (Without Docker)
+ Web Root Folder & App Folder Create Panradhu (Container Virtual Folder Equivalent)
+-> mkdir C:\nginx_html
+-> mkdir C:\fine-app
+Local HTML File Create Panradhu
+->echo <h1>Hello I am updated fine-app!</h1> > fine.html
+File Transfer / Copy Panradhu (Host-to-Container Equivalent)
+->copy fine.html C:\nginx_html\index.html
+Folder / App Name-a Rename Panradhu (docker rename Equivalent)
+->ren C:\fine-app my-web-app
+Directory Content / List Check Panradhu (docker ps Equivalent)
+->dir C:\nginx_html
+Shortcut / Alias Tag Create Panradhu (docker tag Equivalent)
+->mklink /D C:\my-nginx C:\nginx_html
+Local Folder Content / Links Check Panradhu (docker images Equivalent)
+->dir C:\my-nginx
+Local IIS Web Server / Process-a Stop Panradhu (docker stop Equivalent)
+->net stop w3svc
+Local IIS Web Server / Process-a Start Panradhu (docker start Equivalent)
+->net start w3svc
+File Backup / Download Copy Panradhu (Container-to-Host Equivalent)
+->copy C:\nginx_html\index.html .\downloaded_index.html
+ 
+
+
+Commands
+mkdir C:\nginx_html
+mkdir C:\fine-app
+echo <h1>Hello I am updated fine-app!</h1> > fine.html
+copy fine.html C:\nginx_html\index.html
+ren C:\fine-app my-web-app
+dir C:\nginx_html
+mklink /D C:\my-nginx C:\nginx_html
+dir C:\my-nginx
+net stop w3svc
+net start w3svc
+copy C:\nginx_html\index.html .\downloaded_index.html
+
+Single line cmd -> echo <h1>Hello I am updated fine-app!</h1> > fine.html && mkdir C:\nginx_html && copy fine.html C:\nginx_html\index.html && start C:\nginx_html\index.html && type fine.html && ren C:\fine-app my-web-app && dir C:\nginx_html && mklink /D C:\my-nginx C:\nginx_html && type C:\my-nginx\index.html && net stop w3svc && net start w3svc && copy C:\nginx_html\index.html .\downloaded_index.html && type downloaded_index.html
+
+Direct Output :
+File Create Panna 
+echo "<h1>God</h1>" > example.html
+Browser-la Open Panna
+start example.html
+
+Containerizing a Simple React Application with Docker
+
+
